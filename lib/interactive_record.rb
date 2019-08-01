@@ -61,12 +61,12 @@ class InteractiveRecord
   def self.find_by(attribute)
     sql = <<-SQL 
       SELECT * FROM #{self.table_name}
-      WHERE #{attribute.key(attribute[0])} = ?
+      WHERE #{attribute.flatten[0].to_s} = ?
     SQL
     
     binding.pry
     
-    DB[:conn].execute(sql, attribute[0])
+    DB[:conn].execute(sql, attribute.flatten[1])
   end 
   
 end
