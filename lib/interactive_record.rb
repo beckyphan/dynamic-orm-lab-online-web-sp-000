@@ -61,7 +61,7 @@ class InteractiveRecord
   def self.find_by(attribute)
     sql = <<-SQL 
       SELECT * FROM #{self.table_name}
-      WHERE #{attribute.key(attribute[0]} = ?
+      WHERE #{attribute.key(attribute[0])} = ?
     SQL
     
     binding.pry
