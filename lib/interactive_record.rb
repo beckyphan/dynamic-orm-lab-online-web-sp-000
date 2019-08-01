@@ -64,8 +64,6 @@ class InteractiveRecord
       WHERE #{attribute.flatten[0].to_s} = ?
     SQL
     
-    binding.pry
-    
     DB[:conn].execute(sql, attribute.flatten[1])
   end 
   
